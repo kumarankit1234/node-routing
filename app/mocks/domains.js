@@ -1,4 +1,4 @@
-module.exports = {
+const getDomains = {
 	data: {
 		total: 50,
 		domains: [
@@ -1581,3 +1581,4 @@ module.exports = {
 		]
 	}
 };
+module.exports = {getDomains};
