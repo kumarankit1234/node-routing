@@ -1,6 +1,5 @@
 var express = require('express'),
-	router = express.Router(),
-	domainsMock = require('../mocks/domains').getDomains;
+	router = express.Router();
 
 const generateDomain = id => ({
 	id: id,
