@@ -6,5 +6,5 @@ Getting started.
 1. `npm install`
 2. `npm start.`
 
-You can also use 
+You can also use
 `nodemon index.js` for hot reloading.

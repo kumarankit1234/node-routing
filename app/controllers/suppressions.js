@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
             updatedBy: 'Site Admin ADF'
         });
     }
-    res.json({ data: lists });
+    res.json({data: lists});
 });
 
 router.get('/:id', (req, res) => {
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
         updatedAt: 1510665639,
         updatedBy: 'Site Admin ADF'
     };
-    res.json({ data: list });
+    res.json({data: list});
 });
 
 module.exports = router;
