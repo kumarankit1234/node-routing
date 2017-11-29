@@ -56,7 +56,7 @@ router.get('/search', (req, res) => {
 
 router.get('/:id', (req, res, next) => {
 	const id = req.params.id;
-	res.json(generateDomain(id));
+	res.json({domain: generateDomain(id)});
 });
 
 module.exports = router;
