@@ -7,7 +7,7 @@ module.exports = {
 
     verifyToken: token => {
         try {
-            const decodedValueOfToken = jwt.decode(token, process.env.SECRET);
+            const decodedValueOfToken = jwt.verify(token, process.env.SECRET);
             return decodedValueOfToken;
         } catch (error) {
             return false;
