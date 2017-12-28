@@ -1,7 +1,6 @@
 const express = require('express'),
     app = express();
 const t = require('dotenv').config();
-console.log(t.parsed);
 
 app.use(require('./app/routes'));
 
