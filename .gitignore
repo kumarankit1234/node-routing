@@ -38,3 +38,9 @@ dist
 
 # Mac files
 .DS_Store
+
+
+ElasticSearch.txt
+Redux-code-findings.txt
+abc.txt
+app/flock.js
