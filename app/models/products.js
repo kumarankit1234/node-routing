@@ -1,8 +1,29 @@
-const { getDocumentWithExactMatch } = require('../../elastic-search');
-// let exports = (module.exports = {});
+const {
+    getDocumentWithExactMatch,
+    addDocument,
+    getAllDocuments,
+    searchDocuments
+} = require('../services/ElasticSearch');
 
-exports.getDocumentWithMatch = productID => {
-    return getDocumentWithExactMatch('my_store', 'products', {
-        productID: 'XHDK-A-1293-#fJ3'
-    });
+const productModel = {
+    get: productID => {
+        return getDocumentWithExactMatch('my_store', 'products', {
+            _id: productID
+        });
+    },
+
+    getAll: () => {
+        return getAllDocuments('my_store', 'products');
+    },
+
+    search: query => {
+        return searchDocuments('my_store', 'products', query);
+    },
+
+    add: product => {
+        console.log(product);
+        return addDocument('my_store', 'products', product);
+    }
 };
+
+module.exports = productModel;

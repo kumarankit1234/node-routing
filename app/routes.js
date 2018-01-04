@@ -30,6 +30,11 @@ router.use('/login', login);
  * the routes the needs the user to be authenticated
  */
 router.use(auth);
+/**
+ * Parse the json body in the request
+ * and add it to request.body object
+ */
+router.use(bodyParser.json());
 
 router.use('/suppressions', suppressions);
 router.use('/domains', domains);
