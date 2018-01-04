@@ -34,6 +34,19 @@ const ElasticSearchService = {
         });
         const jsonRes = await res.json();
         return jsonRes;
+    },
+
+    searchDocuments: async (index, type, searchquery) => {
+        const res = await fetch(`${ES_URI}/${index}/${type}/_search`, {
+            body: JSON.stringify({
+                query: {
+                    match: searchquery
+                }
+            }),
+            method: 'POST'
+        });
+        const jsonRes = await res.json();
+        return jsonRes;
     }
 };
 

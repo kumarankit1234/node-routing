@@ -3,7 +3,7 @@ const jwt = require('../jwtToken');
 /**
  * All the middlewares used in the application are listed here
  */
-module.exports = {
+const middlewares = {
     /**
      * Adds required headers in the response to
      * accept requests from a client from a different domain
@@ -24,6 +24,11 @@ module.exports = {
      */
     auth: (req, res, next) => {
         const authHeader = req.get('Authorization');
+        if (!authHeader) {
+            res.json({
+                error: 'Invalid Token'
+            });
+        }
         const authHeaderArray = authHeader.split(' ');
         if (authHeaderArray.length === 2 && authHeaderArray[0] === 'Bearer') {
             const decodedToken = jwt.verifyToken(authHeaderArray[1]);
@@ -43,3 +48,5 @@ module.exports = {
         }
     }
 };
+
+module.exports = middlewares;

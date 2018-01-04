@@ -1,7 +1,8 @@
 const {
     getDocumentWithExactMatch,
     addDocument,
-    getAllDocuments
+    getAllDocuments,
+    searchDocuments
 } = require('../services/ElasticSearch');
 
 const productModel = {
@@ -15,7 +16,12 @@ const productModel = {
         return getAllDocuments('my_store', 'products');
     },
 
+    search: query => {
+        return searchDocuments('my_store', 'products', query);
+    },
+
     add: product => {
+        console.log(product);
         return addDocument('my_store', 'products', product);
     }
 };
